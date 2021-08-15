@@ -1,0 +1,15 @@
+[package]
+name = "slings"
+version = "0.1.0"
+authors = ["Javier López Úbeda <jlopezcur@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+skim = "0.9.4"
+freedesktop-desktop-entry = "0.2.4"
+nix = "0.22.0"
+structopt = "0.3.22"
+execute = "0.2.9"
+toml = "0.5.3"
