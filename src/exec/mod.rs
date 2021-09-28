@@ -17,8 +17,9 @@ pub fn exec(item: &item::Item, cfg: &toml::Value) {
                 .expect("Failed to start");
         }
         item::Target::TERMINAL => {
-            let term_cmd = format!("{} -e {}", cfg.get("terminal").unwrap(), &item.cmd);
-            shell(&term_cmd).spawn().unwrap();
+            let term_cmd = format!("nohup {} -e {} >/dev/null 2>&1 &", cfg.get("terminal").unwrap(), &item.cmd);
+            let mut child = shell(&term_cmd).spawn().unwrap();
+            child.wait().unwrap();
         }
     }
 }
