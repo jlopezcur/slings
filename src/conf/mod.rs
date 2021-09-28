@@ -1,5 +1,3 @@
-extern crate xdg;
-
 pub fn read() -> toml::Value {
     let xdg_dirs = xdg::BaseDirectories::with_prefix("slings").unwrap();
     let config_path = xdg_dirs
